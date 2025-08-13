@@ -41,9 +41,11 @@ function SidebarHeaderContent() {
   const { state } = useSidebar();
   
   return (
-    <SidebarHeader>
-      {state === "expanded" && (
+    <SidebarHeader className="h-[52px] flex items-center">
+      {state === "expanded" ? (
         <div className="px-2 py-1 text-sm font-semibold">Agent Validation Hub</div>
+      ) : (
+        <div className="h-[28px]" />
       )}
     </SidebarHeader>
   );
