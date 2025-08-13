@@ -12,6 +12,7 @@ import {
   SidebarSeparator,
   SidebarInset,
   SidebarTrigger,
+  useSidebar,
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -36,13 +37,23 @@ const navItems = [
   { to: "/settings", label: "设置", Icon: Settings },
 ];
 
+function SidebarHeaderContent() {
+  const { state } = useSidebar();
+  
+  return (
+    <SidebarHeader>
+      {state === "expanded" && (
+        <div className="px-2 py-1 text-sm font-semibold">Agent Validation Hub</div>
+      )}
+    </SidebarHeader>
+  );
+}
+
 export default function AppLayout() {
   return (
     <SidebarProvider>
       <Sidebar collapsible="icon">
-        <SidebarHeader>
-          <div className="px-2 py-1 text-sm font-semibold">Agent Validation Hub</div>
-        </SidebarHeader>
+        <SidebarHeaderContent />
         <SidebarContent>
           <SidebarGroup>
             <SidebarGroupLabel>导航</SidebarGroupLabel>

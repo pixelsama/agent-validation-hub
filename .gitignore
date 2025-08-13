@@ -25,3 +25,6 @@ dist-ssr
 
 # Screenshots directory (for development/debugging)
 screenshots/
+
+# Local Claude Code guidance (not for sharing)
+CLAUDE.local.md
